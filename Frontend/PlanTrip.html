@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Plan My Trip - Travel-G</title>
+  <link rel="stylesheet" href="new.css">
+    <link rel="icon" type="image/jpg" href="images/Tg.jpg">
+</head>
+<body>
+
+<header>
+  <nav class="navbar">
+    <div class="logo">Travel-<span>G</span></div>
+    <ul class="nav-links">
+      <li><a href="Home.html">Home</a></li>
+      <li><a href="Destinations.html">Destinations</a></li>
+      <li><a href="HiddenGems.html">Hidden Gems</a></li>
+      <li><a href="PlanTrip.html">Plan My Trip</a></li>
+      <li><a href="Contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="planner">
+
+  <h1>Plan Your Trip</h1>
+
+  <select id="mood">
+    <option value="">Select Mood</option>
+    <option value="relax">Relax</option>
+    <option value="adventure">Adventure</option>
+    <option value="romantic">Romantic</option>
+    <option value="budget">Budget</option>
+  </select>
+
+  <input type="number" id="days" placeholder="Number of Days">
+  <input type="number" id="budget" placeholder="Total Budget">
+
+  <select id="travelType">
+    <option value="">Travel Type</option>
+    <option value="solo">Solo</option>
+    <option value="family">Family</option>
+    <option value="couple">Couple</option>
+  </select>
+
+  <button onclick="generateTrip()">Generate Trip</button>
+
+  <div id="tripResult"></div>
+  <canvas id="budgetChart"></canvas>
+
+
+
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script src="script.js"></script>
+
+
+</body>
+</html>
