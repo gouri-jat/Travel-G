@@ -13,12 +13,28 @@ window.addEventListener("scroll", () => {
   });
 });
 
-document.getElementById("planBtn").addEventListener("click", () => {
+const planBtn = document.getElementById("planBtn")
+
+if(planBtn){
+planBtn.addEventListener("click", () => {
   window.location.href = "PlanTrip.html";
 });
-document.getElementById("exploreBtn").addEventListener("click", () => {
+}
+
+const exploreBtn = document.getElementById("exploreBtn")
+
+if(exploreBtn){
+exploreBtn.addEventListener("click", () => {
   window.location.href = "Destinations.html";
 });
+}
+
+// document.getElementById("planBtn").addEventListener("click", () => {
+//   window.location.href = "PlanTrip.html";
+// });
+// document.getElementById("exploreBtn").addEventListener("click", () => {
+//   window.location.href = "Destinations.html";
+// });
 
 // REGISTER
 const registerForm = document.getElementById("registerForm")
@@ -85,7 +101,11 @@ alert("Login successful")
 
 
 
-document.getElementById("budgetChart").innerHTML = "";
+const chart = document.getElementById("budgetChart")
+
+if(chart){
+chart.innerHTML = ""
+}
 
 
 function generateChart(stay, food, transport, activities) {
@@ -134,4 +154,41 @@ data.itinerary.forEach(day=>{
 result += `<p>${day}</p>`
 })
 document.getElementById("tripResult").innerHTML = result
+}
+
+//contact-form
+// CONTACT FORM
+
+const contactForm = document.getElementById("contact-form")
+
+if(contact-form){
+contact-form.addEventListener("submit", async function(e){
+
+e.preventDefault()
+
+const name = document.getElementById("name").value
+const email = document.getElementById("email").value
+const message = document.getElementById("message").value
+
+const res = await fetch("http://localhost:5000/api/contact",{
+
+method:"POST",
+
+headers:{
+"Content-Type":"application/json"
+},
+
+body: JSON.stringify({
+name,
+email,
+message
+})
+
+})
+
+const data = await res.json()
+
+alert(data.msg)
+
+})
 }
