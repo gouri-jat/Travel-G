@@ -5,6 +5,7 @@
   <title>Plan My Trip - Travel-G</title>
   <link rel="stylesheet" href="new.css">
     <link rel="icon" type="image/jpg" href="images/Tg.jpg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
@@ -16,6 +17,7 @@
       <li><a href="Destinations.html">Destinations</a></li>
       <li><a href="HiddenGems.html">Hidden Gems</a></li>
       <li><a href="PlanTrip.html">Plan My Trip</a></li>
+      <li><a href="booking.html">Book Now</a></li>
       <li><a href="Contact.html">Contact</a></li>
     </ul>
   </nav>
@@ -36,23 +38,24 @@
   <input type="number" id="days" placeholder="Number of Days">
   <input type="number" id="budget" placeholder="Total Budget">
 
-  <select id="travelType">
+  <b><select id="travelType"></b>
     <option value="">Travel Type</option>
     <option value="solo">Solo</option>
+
     <option value="family">Family</option>
+
     <option value="couple">Couple</option>
   </select>
 
   <button onclick="generateTrip()">Generate Trip</button>
 
-  <div id="tripResult"></div>
-  <canvas id="budgetChart"></canvas>
-
+  <div id="tripResult" class="results-container"></div>></div>
+  
 
 
 </section>
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 
 <script src="script.js"></script>
 

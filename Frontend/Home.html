@@ -20,6 +20,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
         <li><a href="Home.html">Home</a></li>
         <li><a href="Destinations.html">Destinations</a></li>
         <li><a href="HiddenGems.html">Hidden Gems</a></li>
+        <li><a href="booking.html">Book Now</a></li>
         <li><a href="Contact.html">Contact</a></li>
       </ul>
       <div class="nav-buttons">
@@ -51,49 +52,54 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
 <section class="travel-cards">
 <div class="card-wrapper">
 
-<div class="card">
+
+<div class="card" onclick="openCategory('adventure')">
 <img src="./images/adventure.jpg">
 <h3>Adventure</h3>
 <p>Trekking and thrilling activities</p>
 </div>
 
-<div class="card">
+<div class="card" onclick="openCategory('weekend')">
 <img src="./images/weekend.jpg">
 <h3>Weekends</h3>
 <p>Make your weekends special</p>
 </div>
 
-<div class="card">
+<div class="card" onclick="openCategory('luxury')">
 <img src="./images/luxury.jpg">
 <h3>Luxury</h3>
 <p>Enjoy at luxurious places</p>
 </div>
 
-<div class="card">
+<div class="card" onclick="openCategory('budget')">
 <img src="./images/budget.jpg">
 <h3>Budget</h3>
 <p>Low cost travel ideas</p>
 </div>
 
-<div class="card"><!--1-->
+<div class="card" onclick="openCategory('beaches')">
 <img src="./images/beach3.jpg">
 <h3>Beaches</h3>
 <p>Relax at beautiful beaches</p>
 </div>
 
-<div class="card"> <!--2-->
+<div class="card" onclick="openCategory('devotional')"><!--2-->
 <img src="./images/devotional 2.jpg">
 <h3>Devotional</h3>
 <p>Devotional places</p>
 </div>
-
-<div class="card"> <!--3-->
+<div class="card" onclick="window.location.href='hotels.html'">
+<!-- <div class="card" onclick="openCategory('hotels')">  -->
 <img src="./images/hotel.jpg">
 <h3>Hotels </h3>
 <p>Book your favourite hotel</p>
+<button onclick="bookHotel()" style="background-color:#ff9a44; color:white;">
+  Book Now
+</button>
+<!-- <button onclick="bookHotel('Taj Resort')">Book Now</button> -->
 </div>
 
-<div class="card"> <!--4-->
+<div class="card" onclick="openCategory('mountains')"><!--4-->
 <img src="./images/mountains.jpg">
 <h3>Mountains</h3>
 <p> Explore peaceful mountains and hill stations</p>
@@ -101,6 +107,15 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
 </div>
 </section>
 </section>
+
+
+
+
+
+
+
+
+
 <!--------- page 3     ------->
 
 <section class="features">
@@ -182,9 +197,10 @@ and plan their perfect trips easily.
   <div id="chatbot-window">
     <div id="chat-header"> Travel-G Assistant</div>
     <div id="chat-body"></div>
-    <div id="chat-input-area">
-      <input type="text" id="chat-input" placeholder="Ask me anything..." />
-
+    <div class="user-msg"></div>
+    <div class="bot-msg"></div>
+<div class="chat-footer">
+  <input type="text" id="chat-input" placeholder="Ask me anything...">
       <button id="send-btn">Send</button>
     </div>
   </div>

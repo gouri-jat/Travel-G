@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Contact - Travel-G</title>
+  <title>Book-Now.Travel-G</title>
   <link rel="stylesheet" href="new.css">
   <link rel="icon" type="image/jpg" href="image/Tg.jpg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -23,17 +23,23 @@
   </nav>
 </header>
 
+<h2>Book Your Hotel</h2>
 
+<form id="bookingForm">
 
-<section class="contactForm">
-                          <h1>Contact Us</h1>
-    <form id="contactForm">
- <input type="text" id="name" placeholder="Name" required>
-    <input type="email" id="email" placeholder="Email" required>
-    <textarea id="message" placeholder="Message" required></textarea>
-  <button type="submit" class = "primary-btn" >Send Message</button>
+  <!-- <input type="text" id="hotelName" placeholder="Hotel Name" readonly>
+    -->
+  <input type="text" id="hotelName" placeholder="Enter Hotel Name" required>
+
+  <input type="text" id="name" placeholder="Your Name" required>
+  <input type="email" id="email" placeholder="Your Email" required>
+
+  <input type="date" id="checkin" required>
+  <input type="date" id="checkout" required>
+
+  <button type="submit">Confirm Booking</button>
+
 </form>
-</section>
 
 <script src="script.js"></script>
 </body>

@@ -5,6 +5,8 @@
   <title>Destinations - Travel-G</title>
   <link rel="stylesheet" href="new.css">
   <link rel="icon" type="image/jpg" href="image/Tg.jpg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
 
 </head>
 <body>
@@ -16,6 +18,7 @@
       <li><a href="Home.html">Home</a></li>
       <li><a href="Destinations.html">Destinations</a></li>
       <li><a href="HiddenGems.html">Hidden Gems</a></li>
+      <li><a href="booking.html">Book Now</a></li>
       <li><a href="Contact.html">Contact</a></li>
     </ul>
   </nav>
@@ -24,61 +27,82 @@
 <section class="page-header">
   <h1>Popular Destinations</h1>
 
+
 <section class="card-container">
-  <div class="card"> <!--1-->
+  <div class="card" onclick="openDestination('goa')"><!--1-->
     <img src = "./images/goa.jpg">
     <h3>Goa</h3>
     <p>Beaches, nightlife and relaxation.</p>
   </div>
 
-  <div class="card"><!--2-->
+  <div class="card" onclick="openDestination('manali')"><!--2-->
      <img src = "./images/Manali.jpg">
     <h3>Manali</h3>
     <p>Snow mountains and adventure sports.</p>
   </div>
 
-  <div class="card"><!--3-->
+  <div class="card" onclick="openDestination('jaipur')"><!--3-->
      <img src = "./images/Jaipur.jpg">
     <h3>Jaipur</h3>
     <p>Romantic lakes and royal palaces.</p>
   </div>
 
   
-  <div class="card"><!--4-->
+  <div class="card" onclick="openDestination('banaras')"><!--4-->
      <img src = "./images/banaras.jpg">
     <h3>Banaras</h3>
     <p>Romantic lakes and royal palaces.</p>
   </div>
 
   
-  <div class="card"><!--5-->
+  <div class="card" onclick="openDestination('kerala')"><!--5-->
      <img src = "./images/Kerala.jpg">
     <h3>Kerala</h3>
     <p>Romantic lakes and royal palaces.</p>
   </div>
 
   
-  <div class="card"><!--6-->
+  <div class="card" onclick="openDestination('agra')"><!--6-->
      <img src = "./images/Agra.jpg">
     <h3>Agra</h3>
     <p>Romantic lakes and royal palaces.</p>
   </div>
 
   
-  <div class="card"><!--7-->
+  <div class="card" onclick="openDestination('kashmir')"><!--7-->
      <img src = "./images/Kashmir.jpg">
     <h3>Kashmir</h3>
     <p>Romantic lakes and royal palaces.</p>
   </div>
 
   
-  <div class="card"><!--8-->
+  <div class="card" onclick="openDestination('rajasthan')"><!--8-->
      <img src = "./images/Rajasthan.jpg">
     <h3>Rajasthan</h3>
     <p>Romantic lakes and royal palaces.</p>
   </div>
+ <div id="destinationModal" class="modal">
+<div class="modal-content">
+
+<span class="close" onclick="closeModal()">×</span>
+
+<h2 id="destTitle"></h2>
+
+<h3>Famous Places</h3>
+<ul id="destPlaces"></ul>
+
+<h3>Famous Food</h3>
+<ul id="destFood"></ul>
+
+<b><p id="bestTime" style="font-size: 19px;"></p></b>
+
+</div>
+</div>
+ 
 </section>
 </section>
+
+
 <script src="script.js"></script>
 </body>
 </html>
