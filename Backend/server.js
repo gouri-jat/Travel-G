@@ -21,7 +21,9 @@ app.use("/api/contact", require('./routes/contactRoutes'))
 app.use("/api/booking", require("./routes/bookingRoutes"))
 
 const PORT = process.env.PORT || 5000
-
+app.get("/",(req,res)=>{
+  res.send("Server started");
+})
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`)
 })
