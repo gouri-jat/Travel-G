@@ -8,7 +8,7 @@ function openCategory(category) {
     window.location.href = "Destinations.html?category=" + category;
 }
 function openHotels() {
-  window.location.href = "hotels.html";
+  window.location.href = "Hotels.html";
 }
 
 const cards = document.querySelectorAll(".card");
