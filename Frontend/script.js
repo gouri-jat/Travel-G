@@ -3,6 +3,7 @@
 ======================== */
 
 console.log("script js loaded")
+const BASE_URL="https://travel-g-backend.onrender.com"
 function openCategory(category) {
     window.location.href = "Destinations.html?category=" + category;
 }
@@ -267,7 +268,7 @@ const name = document.getElementById("name").value
 const email = document.getElementById("email").value
 const password = document.getElementById("password").value
 
-const res = await fetch("http://localhost:5000/api/auth/register",{
+const res = await fetch(`${BASE_URL}/api/auth/register`,{
 
 method:"POST",
 
@@ -301,7 +302,7 @@ e.preventDefault()
 const email = document.getElementById("email").value
 const password = document.getElementById("password").value
 
-const res = await fetch("http://localhost:5000/api/auth/login",{
+const res = await fetch(`${BASE_URL}/api/auth/login`,{
 
 method:"POST",
 
@@ -338,7 +339,7 @@ const name = document.getElementById("name").value;
 const email = document.getElementById("email").value;
 const message = document.getElementById("message").value;
 
-const res = await fetch("http://localhost:5000/api/contact", {
+const res = await fetch(`${BASE_URL}/api/contact`, {
   method: "POST",
   headers: {
     "Content-Type": "application/json"
@@ -390,7 +391,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       console.log("DATA:", { name, email, checkin, checkout, hotel });
 
-      const res = await fetch("http://localhost:5000/api/booking", {
+      const res = await fetch(`${BASE_URL}/api/booking`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
