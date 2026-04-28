@@ -287,7 +287,7 @@ password
 const data = await res.json()
 
 alert("Registered sucessfully 🎉");
-window.location.href="home.html"
+window.location.href="index.html"
 });
 
 }
@@ -324,7 +324,7 @@ if(!res.ok){
 }
 localStorage.setItem("token",data.token)
 alert("Login successful 🎉")
-window.location.href='home.html'
+window.location.href='index.html'
 });
 }
  // contact form
