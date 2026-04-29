@@ -49,7 +49,7 @@ setupBtn("exploreBtn", "Destinations.html");
     }
 
     try{
-      await fetch(`${BASE_URL}/api/trip/save-trip`, {
+       fetch(`${BASE_URL}/api/trip/save-trip`, {
   method: "POST",
   headers: {
     "Content-Type": "application/json"
