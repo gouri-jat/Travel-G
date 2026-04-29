@@ -35,7 +35,9 @@ setupBtn("exploreBtn", "Destinations.html");
 /* ========================
    TRIP GENERATOR ENGINE
 ======================== */
-function generateTrip() {
+
+
+ async function generateTrip() {
     const mood = document.getElementById("mood").value;
     const days = parseInt(document.getElementById("days").value);
     const budget = parseInt(document.getElementById("budget").value);
@@ -44,6 +46,23 @@ function generateTrip() {
     if (!mood || !days || !budget || !travelType) {
         alert("Please fill all fields");
         return;
+    }
+
+    try{
+      await fetch(`${BASE_URL}/api/trip/save-trip`, {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify({
+    mood,
+    days,
+    budget,
+    travelType
+  })
+});
+    }catch(err){
+      console.log("Trip Save error:",err);
     }
 
     const destinations = [
@@ -85,8 +104,7 @@ let lastTrips = JSON.parse(localStorage.getItem("lastTrips")) || [];
         return { ...dest, score };
     }).sort((a, b) => b.score - a.score);
 
-    // let shuffled = results.slice(0,6).sort(() => Math.random() - 0.5)
-    // const top3 = shuffled.slice(0, 3);
+    
      let pool = results.slice(0, 8); // bigger pool
       let top3 = [];
 
@@ -98,11 +116,34 @@ while (top3.length < 3 && pool.length > 0) {
 localStorage.setItem("lastTrips", JSON.stringify(top3.map(d => d.name)));
 
     // 2. Budget & Itinerary Data
-    const stay = Math.floor(budget * 0.4);
-    const food = Math.floor(budget * 0.25);
-    const transport = Math.floor(budget * 0.2);
-    const activities = Math.floor(budget * 0.15);
-    const getPercent = (val) => (val / budget) * 100;
+    // const stay = Math.floor(budget * 0.4);
+    // const food = Math.floor(budget * 0.25);
+    // const transport = Math.floor(budget * 0.2);
+    // const activities = Math.floor(budget * 0.15);
+    // const getPercent = (val) => (val / budget) * 100;
+
+
+let stay, food, transport, activities;
+
+if(travelType === "solo"){
+  stay = budget * 0.3
+  food = budget * 0.2
+  transport = budget * 0.3
+  activities = budget * 0.2
+}
+else if(travelType === "couple"){
+  stay = budget * 0.4
+  food = budget * 0.25
+  transport = budget * 0.2
+  activities = budget * 0.15
+}
+else if(travelType === "family"){
+  stay = budget * 0.45
+  food = budget * 0.3
+  transport = budget * 0.15
+  activities = budget * 0.1
+}
+
 
     const activitiesList = ["Explore landmarks", "Local Food Tasting", "Adventure Session", "Shopping & Leisure", "Relax at Scenic Spot"];
 
