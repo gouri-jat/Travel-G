@@ -48,6 +48,8 @@ setupBtn("exploreBtn", "Destinations.html");
         return;
     }
 
+    const getPercent =(val)=>(val / budget) * 100;
+
     try{
        fetch(`${BASE_URL}/api/trip/save-trip`, {
   method: "POST",
